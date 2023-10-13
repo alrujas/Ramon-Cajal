@@ -1,2 +1,16 @@
 # Ramon-Cajal
-Proyecto de videojuego para la asignatura de Fundamentos de Videojuegos de 3º del grado de Ingeniería Informática.
+Primera entrega: 
+-GDD:
+   * Descripción principal del juego
+   * Objetivos
+   * Narrativa y personajes
+   * Jugadores objetivo
+   * Motivadores
+   * Mecánica principal del juego
+   * Storyboard
+   * Género y referencias a juegos previos
+   * Organización del equip
+-Planificación:
+   * Contenido Product Backlog revisado
+   * Contenido segunda iteración
+   
