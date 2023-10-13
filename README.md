@@ -1,6 +1,7 @@
 # Ramon-Cajal
-Primera entrega: 
--GDD:
+Primera entrega
+
+GDD:
    * Descripción principal del juego
    * Objetivos
    * Narrativa y personajes
@@ -9,8 +10,10 @@ Primera entrega:
    * Mecánica principal del juego
    * Storyboard
    * Género y referencias a juegos previos
-   * Organización del equip
--Planificación:
+   * Organización del equipo
+     
+Planificación:
+
    * Contenido Product Backlog revisado
    * Contenido segunda iteración
    
