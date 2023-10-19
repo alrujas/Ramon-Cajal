@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CajalController : MonoBehaviour
+public class RamonController : MonoBehaviour
 {
-    public float _groundedRadius;
-    public float MovementSpeed = 1;
+public float MovementSpeed = 1;
 
     public float JumpForce = 1;
 
@@ -13,9 +12,6 @@ public class CajalController : MonoBehaviour
 
     private Rigidbody2D _rigidbody;
     private Animator _animator;
-
-    [SerializeField]
-    private LayerMask groundLayer;
 
     void Start()
     {
@@ -26,12 +22,12 @@ public class CajalController : MonoBehaviour
     void Update()
     {
         //Horizontal movement
-         if (Input.GetKey(KeyCode.A))
+         if (Input.GetKey(KeyCode.LeftArrow))
 
          {
              _rigidbody.velocity = new Vector2(-MovementSpeed, _rigidbody.velocity.y);
          }
-         if (Input.GetKey(KeyCode.D))
+         if (Input.GetKey(KeyCode.RightArrow))
 
          {
              _rigidbody.velocity = new Vector2(MovementSpeed, _rigidbody.velocity.y);
@@ -39,7 +35,7 @@ public class CajalController : MonoBehaviour
         _animator.SetFloat("Horizontal", Mathf.Abs(_rigidbody.velocity.x)); //Sets the state of run in the animator
      
         //Vertical movement
-        _onFloor =  Physics2D.OverlapCircle(new Vector2(transform.position.x, transform.position.y-0.5f), _groundedRadius, groundLayer);//Checks if the player is on the floor
+        /*_onFloor = _rigidbody.velocity.y == 0;//Checks if the player is on the floor
         if (Input.GetKeyDown(KeyCode.W) && _onFloor)
 
         {
@@ -47,12 +43,12 @@ public class CajalController : MonoBehaviour
             _rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
 
         }
-        _animator.SetBool("OnFloor", _onFloor);//sets the jump state in the animator
+        _animator.SetBool("OnFloor", _onFloor);//sets the jump state in the animator*/
 
         //Flips the character to face the movement direction
-        if (_rigidbody.velocity.x > 0.1)
+        if (_rigidbody.velocity.x >0.1)
         {
-            transform.eulerAngles = new Vector3(0, 0, 0);
+            transform.eulerAngles = new Vector3(0,0,0);
         }
         if (_rigidbody.velocity.x < -0.1)
         {
