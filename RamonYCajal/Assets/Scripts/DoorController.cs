@@ -50,7 +50,6 @@ public class DoorController : MonoBehaviour
                 // Si se mueve hacia arriba que no supere el limite superior
                 if (transform.position.y < maxY)
                 {
-                    Debug.Log("ABRIENDO");
                     transform.position = new Vector2(transform.position.x, transform.position.y + currentSpeed * Time.deltaTime);
                 }
                 else
@@ -83,7 +82,6 @@ public class DoorController : MonoBehaviour
     /// </summary>
     public void Open(){
         if (!doorState){
-            Debug.Log("ABIERTO");
             currentSpeed = movementSpeed;
             isMoving = true;
         }
