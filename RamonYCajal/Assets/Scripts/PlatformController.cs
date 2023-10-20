@@ -25,26 +25,26 @@ public class PlatformController : MonoBehaviour
     public float minY;
 
     /// <summary>
-    /// Vector de movimiento de la plataforma
-    /// </summary>
-    public Vector3 currentMovement = new Vector3(0, 0, 0);
-
-    /// <summary>
     /// Velocidad de movimiento de la plataforma
     /// </summary>
-    public float movementSpeed = 0.04f;
+    public float movementSpeed;
+
+    /// <summary>
+    /// Velocidad actual de la plataforma
+    /// </summary>
+    private float currentSpeed;
 
     public void FixedUpdate()
     {
         if (isMoving)
         {
             // Comprobamos que no haya llegado a la posicion limite
-            if (movementSpeed > 0)
+            if (currentSpeed > 0)
             {
                 // Si se mueve hacia arriba que no supere el limite superior
                 if (transform.position.y < maxY)
                 {
-                    transform.position = new Vector2(transform.position.x, transform.position.y + movementSpeed);
+                    transform.position = new Vector2(transform.position.x, transform.position.y + currentSpeed * Time.deltaTime);
                 }
                 else
                 {
@@ -58,7 +58,7 @@ public class PlatformController : MonoBehaviour
                 // Si se mueve hacia abajo que no supere el limite inferior
                 if (transform.position.y > minY)
                 {
-                    transform.position = new Vector2(transform.position.x, transform.position.y + movementSpeed);
+                    transform.position = new Vector2(transform.position.x, transform.position.y + currentSpeed * Time.deltaTime);
                 }
                 else
                 {
@@ -74,16 +74,14 @@ public class PlatformController : MonoBehaviour
     /// Mueve la plataforma hacia el estado contrario
     /// </summary>
     public void Move()
-    {
-        if (platformState)
-        {
-            movementSpeed = -0.04f;
+    { 
+        if (platformState){
+            currentSpeed = -movementSpeed;
         }
-        else
-        {
-            movementSpeed = 0.04f;
+        else{
+            currentSpeed = movementSpeed;
         }
-
+        
         isMoving = true;
     }
 
