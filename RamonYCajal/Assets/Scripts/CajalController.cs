@@ -17,6 +17,8 @@ public class CajalController : MonoBehaviour
     [SerializeField]
     private LayerMask groundLayer;
 
+    public GameObject mainLever;
+
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -68,5 +70,15 @@ public class CajalController : MonoBehaviour
          {
              _rigidbody.AddForce(new Vector2(MovementSpeed, 0) * Time.deltaTime);
          }*/
+         
+        // Control de la palanca
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            LeverController leverController = mainLever.GetComponent<LeverController>();
+            GameObject closestLever = leverController.ClosestLever();
+            if (closestLever != null){
+                closestLever.GetComponent<LeverController>().ActuateLever();
+            }
+        }
     }
 }
