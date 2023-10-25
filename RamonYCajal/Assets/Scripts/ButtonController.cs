@@ -18,7 +18,7 @@ public class ButtonController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Ramon") || other.CompareTag("Obstacle"))
         {
             DoorController doorController = door.GetComponent<DoorController>();
             // Comprobamos que la puerta no esta en movimiento y que este cerrada

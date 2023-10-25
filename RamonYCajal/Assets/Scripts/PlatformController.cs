@@ -17,22 +17,22 @@ public class PlatformController : MonoBehaviour
     /// <summary>
     /// Altura maxima de la plataforma
     /// </summary>
-    public float maxY;
+    [SerializeField] private float maxY;
 
     /// <summary>
     /// Altura minima de la plataforma
     /// </summary>
-    public float minY;
+    [SerializeField] private float minY;
 
     /// <summary>
     /// Velocidad de movimiento de la plataforma
     /// </summary>
-    public float movementSpeed;
+    [SerializeField] private float movementSpeed;
 
     /// <summary>
     /// Velocidad actual de la plataforma
     /// </summary>
-    private float currentSpeed;
+    [SerializeField] private float currentSpeed;
 
     public void FixedUpdate()
     {

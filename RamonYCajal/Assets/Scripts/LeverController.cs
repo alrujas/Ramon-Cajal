@@ -8,37 +8,42 @@ public class LeverController : MonoBehaviour
     /// True - arriba
     /// False - abajo
     /// </summary>
-    public bool leverState = false;
+    [SerializeField] private bool leverState = false;
 
     /// <summary>
     /// Objeto de Cajal
     /// </summary>
-    public GameObject cajal;
+    private GameObject cajal;
 
     /// <summary>
     /// Objeto de la plataforma
     /// </summary>
-    public GameObject platform;
+    [SerializeField] private GameObject platform;
 
     /// <summary>
     /// SpriteRenderer
     /// </summary>
-    private SpriteRenderer spriteRenderer;
+    [SerializeField] private SpriteRenderer spriteRenderer;
 
     /// <summary>
     /// Sprite de palanca en estado cerrado
     /// </summary>
-    public Sprite closedSprite;
+    [SerializeField] private Sprite closedSprite;
 
     /// <summary>
     /// Sprite de palanca en estado abierto
     /// </summary>
-    public Sprite openSprite;
+    [SerializeField] private Sprite openSprite;
 
     /// <summary>
     /// Lista de palancas del nivel
     /// </summary>
     private static List<GameObject> leverList = new List<GameObject>();
+
+    /// <summary>
+    /// Gamemanager Object
+    /// </summary>
+    private GameManager _gm;
 
     public void Start()
     {
@@ -47,6 +52,9 @@ public class LeverController : MonoBehaviour
         }
 
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+
+        _gm = GameManager.Instance;
+        cajal = _gm.GetCajal();
     }
 
     public void ActuateLever()

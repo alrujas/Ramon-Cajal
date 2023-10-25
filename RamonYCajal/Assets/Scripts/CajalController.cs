@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class CajalController : MonoBehaviour
 {
-    public float _groundedRadius;
-    public float MovementSpeed = 1;
+    [SerializeField] private float _groundedRadius;
+    [SerializeField] private float MovementSpeed = 1;
 
-    public float JumpForce = 1;
+    [SerializeField] private float JumpForce = 1;
 
     private bool _onFloor;
 
