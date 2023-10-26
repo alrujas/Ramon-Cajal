@@ -32,7 +32,7 @@ public class ButtonController : MonoBehaviour
     
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Ramon") || other.CompareTag("Obstacle"))
         {
             buttonRenderer.sprite = normalSprite;
         }
