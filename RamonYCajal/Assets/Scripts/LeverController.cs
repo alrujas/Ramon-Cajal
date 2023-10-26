@@ -111,11 +111,14 @@ public class LeverController : MonoBehaviour
         float minDistance = 2f;
         foreach (GameObject lever in leverList)
         {
-            float distance = Vector3.Distance(lever.transform.position, cajal.transform.position);
-            if (distance < minDistance)
+            if (lever!= null) 
             {
-                minDistance = distance;
-                closestLever = lever;
+                float distance = Vector3.Distance(lever.transform.position, cajal.transform.position);
+                if (distance < minDistance)
+                {
+                    minDistance = distance;
+                    closestLever = lever;
+                }
             }
         }
 
