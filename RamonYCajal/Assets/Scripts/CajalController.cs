@@ -17,12 +17,23 @@ public class CajalController : MonoBehaviour
     [SerializeField]
     private LayerMask groundLayer;
 
+    [SerializeField]
+    private LayerMask objectLayer;
+
     public GameObject mainLever;
+
+    /// <summary>
+    /// Gamemanager Object
+    /// </summary>
+    private GameManager _gm;
 
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+        _gm = GameManager.Instance;
+
+        StartCoroutine(DeathCheck());
     }
 
     void Update()
@@ -80,5 +91,27 @@ public class CajalController : MonoBehaviour
                 closestLever.GetComponent<LeverController>().ActuateLever();
             }
         }
+    }
+
+    /// <summary>
+    /// Funcion para detectar si cae un objeto sobre Cajal
+    /// </summary>
+    /// <returns></returns>
+    public IEnumerator DeathCheck()
+    {
+        // Solo puede morir si estando en el suelo le cae un objeto encima
+        if (_onFloor)
+        {
+            bool deathCheck = Physics2D.OverlapCircle(new Vector2(transform.position.x, transform.position.y + 0.4f), _groundedRadius, objectLayer);
+            if (deathCheck)
+            {
+                _gm.CajalDeath();
+            }
+        }
+
+        // Esperamos cierto tiempo para volver a realizar el check
+        yield return new WaitForSeconds(0.4f);
+
+        StartCoroutine(DeathCheck());
     }
 }

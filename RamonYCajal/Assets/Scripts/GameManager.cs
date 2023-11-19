@@ -8,12 +8,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] private UIManager _ui;
     [SerializeField] private GameObject _Ramon;
     [SerializeField] private GameObject _Cajal;
+    [SerializeField] private GameObject _spawnPoint;
 
     private int _redCoins= 0;
     private int _greenCoins= 0;
     [SerializeField] private int _redMaxCoins= 0;
     [SerializeField] private int _greyMaxCoins= 0;
     [SerializeField] private int _minHeight;
+
     private Vector2 _spawnCajal;
     private Vector2 _spawnRamon;
 
@@ -41,8 +43,11 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         _ui.UpdateCoins(0, 0, _redMaxCoins, _greyMaxCoins);
-        _spawnCajal = _Cajal.transform.position;
-        _spawnRamon = _Ramon.transform.position;
+        _spawnCajal = _spawnPoint.transform.position;
+        _spawnRamon = new Vector2(_spawnPoint.transform.position.x + 3.0f, _spawnPoint.transform.position.y);
+
+        _Cajal.transform.position = _spawnCajal;
+        _Ramon.transform.position = _spawnRamon;
     }
     private void Update()
     {
@@ -96,5 +101,9 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(0);
         Time.timeScale = 1;
+    }
+    public void CajalDeath()
+    {
+        _Cajal.transform.position = _spawnCajal;
     }
 }
