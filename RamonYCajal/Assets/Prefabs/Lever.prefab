@@ -71,8 +71,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1587108159
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: cb9834dd8d030614ab6e3384a1f4f6b5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -98,9 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leverState: 0
-  obj: {fileID: 0}
-  cajal: {fileID: 0}
   platform: {fileID: 0}
-  CanBeUsed: 0
+  spriteRenderer: {fileID: 0}
   closedSprite: {fileID: 21300000, guid: cb9834dd8d030614ab6e3384a1f4f6b5, type: 3}
   openSprite: {fileID: 21300000, guid: 5238f6cbf524e084b9bce7b1d196db3b, type: 3}

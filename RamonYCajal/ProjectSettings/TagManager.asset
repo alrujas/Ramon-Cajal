@@ -17,7 +17,7 @@ TagManager:
   - Water
   - UI
   - Obstacle
-  - 
+  - InvisibleWall
   - 
   - 
   - 
@@ -43,6 +43,39 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BackGround
+    uniqueID: 12512933
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Enviroment
+    uniqueID: 3733096371
+    locked: 0
+  - name: Levers
+    uniqueID: 2707859137
+    locked: 0
+  - name: Buttons
+    uniqueID: 1110529303
+    locked: 0
+  - name: Obstacles
+    uniqueID: 283162751
+    locked: 0
+  - name: End
+    uniqueID: 3608787559
+    locked: 0
+  - name: Platforms
+    uniqueID: 2889866361
+    locked: 0
+  - name: Cajal
+    uniqueID: 620212639
+    locked: 0
+  - name: Ramon
+    uniqueID: 2913852583
+    locked: 0
+  - name: Coins
+    uniqueID: 1077501977
+    locked: 0
+  - name: Flag
+    uniqueID: 3909319997
     locked: 0
