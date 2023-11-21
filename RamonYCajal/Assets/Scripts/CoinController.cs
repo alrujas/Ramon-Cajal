@@ -20,13 +20,15 @@ public class CoinController : MonoBehaviour
     {
         if (_red && collision.gameObject.CompareTag("Ramon"))
         {
+            _gm.PlayCoinSound();
             gameObject.SetActive(false);
             _gm.AddCoins(0);
         }
         if (_grey && collision.gameObject.CompareTag("Cajal"))
         {
+            _gm.PlayCoinSound();
             gameObject.SetActive(false);
-            _gm.AddCoins(1);
+            _gm.AddCoins(1);        
         }
     }
     // Update is called once per frame

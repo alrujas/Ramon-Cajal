@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     private bool _paused= false;
     //Singleton
     private static GameManager _instance;
+    [SerializeField] private AudioSource _coinSound;
     public static GameManager Instance
     {
         get { return _instance; }
@@ -73,6 +74,10 @@ public class GameManager : MonoBehaviour
     {
         return _Cajal;
     }
+    public GameObject GetRamon()
+    {
+        return _Ramon;
+    }
 
     public void AddCoins(int type)
     {
@@ -105,5 +110,10 @@ public class GameManager : MonoBehaviour
     public void CajalDeath()
     {
         _Cajal.transform.position = _spawnCajal;
+    }
+
+    public void PlayCoinSound()
+    {
+        _coinSound.Play();  
     }
 }

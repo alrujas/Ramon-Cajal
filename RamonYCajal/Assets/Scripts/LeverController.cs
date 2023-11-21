@@ -44,9 +44,11 @@ public class LeverController : MonoBehaviour
     /// Gamemanager Object
     /// </summary>
     private GameManager _gm;
+    private AudioSource _audioSource;
 
     public void Start()
     {
+        _audioSource = GetComponent<AudioSource>();
         if (!leverList.Contains(gameObject)){
             leverList.Add(gameObject);
         }
@@ -65,6 +67,7 @@ public class LeverController : MonoBehaviour
             // Comprobamos que la plataforma no se mueva
             if (!pltController.isMoving)
             {
+                _audioSource.Play();
                 if (pltController.platformState)
                 {
                     // La plataforma esta arriba, queremos bajarla

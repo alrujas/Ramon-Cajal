@@ -12,12 +12,13 @@ public class EndLevel : MonoBehaviour
     private bool _cajal = false;
     private bool _ramon= false;
     private bool _end= false;
+    private AudioSource _endLevelSound;
 
     private void Start()
     {
         _gm = GameManager.Instance;
         _ui = _gm.GetUIManager();
-
+        _endLevelSound =  GetComponent<AudioSource>();
     }
     private void Update()
     {
@@ -45,6 +46,7 @@ public class EndLevel : MonoBehaviour
             _partSis1.Play();
             _partSis2.Play();
             _partSis3.Play();
+            _endLevelSound.Play();
             _end = true;
         }
     }
