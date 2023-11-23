@@ -40,6 +40,7 @@ public class DoorController : MonoBehaviour
     /// </summary>
     public int timeToClose;
 
+    public bool _closes = true;
     public void FixedUpdate()
     {
         if (isMoving)
@@ -57,7 +58,10 @@ public class DoorController : MonoBehaviour
                     // En caso de llegar al limite paramos el movimiento
                     doorState = true;
                     isMoving = false;
-                    StartCoroutine(Close());
+                    if (_closes)
+                    {
+                        StartCoroutine(Close());
+                    }
                 }
             }
             else
