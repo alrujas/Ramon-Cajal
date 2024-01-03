@@ -12,6 +12,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject _endLevel;
 
     [SerializeField] private GameObject _scapeMenu;
+    [SerializeField] private GameObject _optionsMenu;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,4 +44,20 @@ public class UIManager : MonoBehaviour
     {
         _scapeMenu.SetActive(false);
     }
+
+    public void OptionsMenu()
+    {
+        _optionsMenu.SetActive(true);
+        _scapeMenu.SetActive(false);
+    }
+    public void CloseOptionsMenu()
+    {
+        _optionsMenu.SetActive(false);
+    }
+
+    public void ChangeHintsBool()
+    {
+        _gm.hints = !_gm.hints;
+    }
+
 }

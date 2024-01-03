@@ -18,7 +18,7 @@ public class ContextHint : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Cajal") /*&& _gm. accesibilidad opcion true*/)
+        if (collision.gameObject.CompareTag("Cajal") && _gm.hints)
         {
             _hint.SetActive(true);
         }

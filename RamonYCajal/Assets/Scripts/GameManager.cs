@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _Ramon;
     [SerializeField] private GameObject _Cajal;
     [SerializeField] private GameObject _spawnPoint;
-
+    [SerializeField] AudioSource _music;
     private int _redCoins= 0;
     private int _greenCoins= 0;
     [SerializeField] private int _redMaxCoins= 0;
@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     private Vector2 _spawnRamon;
 
     private bool _paused= false;
+    public bool hints = false;
     //Singleton
     private static GameManager _instance;
     [SerializeField] private AudioSource _coinSound;
@@ -99,6 +100,7 @@ public class GameManager : MonoBehaviour
     public void Resume()
     {
         _ui.CloseScapeMenu();
+        _ui.CloseOptionsMenu();
         Time.timeScale = 1;
         _paused = false;
     }
@@ -116,4 +118,21 @@ public class GameManager : MonoBehaviour
     {
         _coinSound.Play();  
     }
+    /// <summary>
+    /// Changes the global volume 
+    /// </summary>
+    /// <param name="value"></param> From 0 to 1
+    public void ChangeSound(float value, int type)
+    {
+        switch(type)
+        {
+            case 0:
+                AudioListener.volume = value;
+                break;
+            case 1:
+                _music.volume = value;
+                break;
+        }    
+    }
+
 }
