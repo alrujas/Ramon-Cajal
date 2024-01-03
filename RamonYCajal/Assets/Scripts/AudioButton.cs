@@ -54,6 +54,10 @@ public class AudioButton : MonoBehaviour
         _mutedBool = false;
         _image.sprite = _noMuted;
         _gm.ChangeSound(_slider.value / 100, _type);
+        if (_slider.value < 0.01 || _slider.value == 0)
+        {
+            _image.sprite = _muted;
+        }
     }
     
 }

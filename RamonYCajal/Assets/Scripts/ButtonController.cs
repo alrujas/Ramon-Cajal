@@ -5,6 +5,7 @@ public class ButtonController : MonoBehaviour
     public Sprite normalSprite;
     public Sprite pressedSprite;
     private SpriteRenderer buttonRenderer;
+    private AudioSource _audioSource;
 
     /// <summary>
     /// Objeto de la puerta
@@ -12,6 +13,7 @@ public class ButtonController : MonoBehaviour
     public GameObject door;
     
     private void Start(){
+        _audioSource = GetComponent<AudioSource>();
         buttonRenderer = GetComponent<SpriteRenderer>();
         buttonRenderer.sprite = normalSprite;
     }
@@ -26,6 +28,7 @@ public class ButtonController : MonoBehaviour
             {
                 doorController.Open();
                 buttonRenderer.sprite = pressedSprite;
+                _audioSource.Play();
             }
         }
     }

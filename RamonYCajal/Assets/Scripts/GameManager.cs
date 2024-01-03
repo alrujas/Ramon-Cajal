@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+
     [SerializeField] private UIManager _ui;
     [SerializeField] private GameObject _Ramon;
     [SerializeField] private GameObject _Cajal;
@@ -15,6 +17,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int _redMaxCoins= 0;
     [SerializeField] private int _greyMaxCoins= 0;
     [SerializeField] private int _minHeight;
+
+    [SerializeField] private AudioMixer _vfx;
+    [SerializeField] private AudioMixer _uiMixer;
 
     private Vector2 _spawnCajal;
     private Vector2 _spawnRamon;
@@ -131,6 +136,9 @@ public class GameManager : MonoBehaviour
                 break;
             case 1:
                 _music.volume = value;
+                break;
+            case 2:
+                _vfx.SetFloat("Volume", Mathf.Log10(value*100)*20);
                 break;
         }    
     }
