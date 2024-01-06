@@ -73,6 +73,9 @@ TagManager:
   - name: Cajal
     uniqueID: 620212639
     locked: 0
+  - name: lazo
+    uniqueID: 909786407
+    locked: 0
   - name: Ramon
     uniqueID: 2913852583
     locked: 0
@@ -81,4 +84,7 @@ TagManager:
     locked: 0
   - name: Flag
     uniqueID: 3909319997
+    locked: 0
+  - name: Dialogs
+    uniqueID: 1847043919
     locked: 0

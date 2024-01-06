@@ -9,6 +9,7 @@ public class EndLevel : MonoBehaviour
     [SerializeField] private ParticleSystem _partSis1;
     [SerializeField] private ParticleSystem _partSis2;
     [SerializeField] private ParticleSystem _partSis3;
+    [SerializeField] private GameObject _cajalMom;
     private bool _cajal = false;
     private bool _ramon= false;
     private bool _end= false;
@@ -47,6 +48,7 @@ public class EndLevel : MonoBehaviour
             _partSis2.Play();
             _partSis3.Play();
             _endLevelSound.Play();
+            _cajalMom.SetActive(true);
             _end = true;
         }
     }

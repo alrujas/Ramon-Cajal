@@ -135,7 +135,7 @@ public class GameManager : MonoBehaviour
                 AudioListener.volume = value;
                 break;
             case 1:
-                _music.volume = value;
+                _music.volume = value/4;
                 break;
             case 2:
                 _vfx.SetFloat("Volume", Mathf.Log10(value*100)*20);
